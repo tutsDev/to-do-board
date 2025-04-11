@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Board</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="pageTitle">Welcome to the To-Do Board</h1>
+    </header>
+
+    <main>
+        <button><i class="fa-solid fa-plus"></i></button>
+        <section id="toDoBoard">
+
+            <div class="toDoContainer">
+
+                <ul class="toDoList">
+
+                    <li class="toDoCard">
+                        <input type="checkbox">
+                        <span class="toDoCardTitle">Chest Workout</span>
+                        <button id="deleteCardBtn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </li>
+
+                    <li class="toDoCard">
+                        <input type="checkbox">
+                        <span class="toDoCardTitle">Go to Collage</span>
+                        <button id="deleteCardBtn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </li>
+
+                    <li class="toDoCard">
+                        <input type="checkbox">
+                        <span class="toDoCardTitle">Go to Work</span>
+                        <button id="deleteCardBtn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p class="footerText">Designed and Developed by Arthur &copy;</p>
+    </footer>
+</body>
+</html>
