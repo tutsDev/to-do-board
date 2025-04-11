@@ -12,7 +12,109 @@ body {
     align-items: center;
     justify-content: space-evenly;
 
-    min-height: 100vh;
+    max-height: 100vh;
 
     font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+
+    background-image: radial-gradient(circle at 1px 1px, #2E2E2E 1px, #000 0);
+    background-position: center center;
+    background-size: 20px 20px;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+    width: 100%;
+}
+
+.pageTitle, .footerText {
+    background-color: #000;
+    letter-spacing: 1px;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 80vh;
+    width: 100%;
+}
+
+.toDoBoard {
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.toDoTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+    width: 100%;
+    height: 8%;
+}
+
+.editToDoTitleBtn{
+    background-color: transparent;
+    border: none;
+
+    color: #FFF;
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.toDoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    padding: 10px;
+    margin: 10px;
+    height: 100%;
+    width: 350px;
+}
+
+.toDoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: auto;
+
+    padding: 10px;
+    height: 92%;
+    width: 100%;
+}
+
+.toDoCard {
+    color: #000;
+    background-color: #FFF;
+
+    list-style: none;
+
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-height: 125px;
+    width: 100%;
 }
