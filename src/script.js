@@ -1,39 +1,46 @@
-/*Create new ToDo Container*/
-function createToDoContainer() {
-    const toDoContainer = document.createElement('div');
-    toDoContainer.classList.add('toDoContainer');
+/*Create a new toDoCard*/
+function createToDoCard() {
+    const toDoCard = document.createElement('li');
+    toDoCard.classList.add('toDoCard');
+    
+    const dragBar = document.createElement('div');
+    dragBar.classList.add('dragBar');
+    const dragBtn = document.createElement('button');
+    dragBtn.classList.add('dragBtn');
+    dragBar.appendChild(dragBtn);
 
-    const toDoTitleContainer = document.createElement('div');
-    toDoTitleContainer.classList.add('toDoTitleContainer');
-    const toDoTitle = document.createElement('h2');
-    toDoTitle.classList.add('toDoTitle');
-    toDoTitle.innerText = 'Container Title';
+    const toDoDone = document.createElement('input');
+    toDoDone.classList.add('toDoDone');
+    toDoDone.setAttribute('type', 'checkbox');
 
-    const toDoContainerActions = document.createElement('div');
-    toDoContainerActions.classList.add('toDoContainerActions');
-    const editToDoTitleBtn = document.createElement('span')
-    editToDoTitleBtn.classList.add('editToDoTitleBtn');
-    const penIcon = document.createElement('i')
-    penIcon.classList.add('fa-solid', 'fa-pen');
-    const deleteContainerBtn = document.createElement('span')
-    deleteContainerBtn.classList.add('deleteContainerBtn');
-    const trashIcon = document.createElement('i')
-    trashIcon.classList.add('fa-solid', 'fa-trash');
+    const toDoCardText = document.createElement('div');
+    toDoCardText.classList.add('toDoCardText');
+    const toDoCardTitle = document.createElement('h3');
+    toDoCardTitle.classList.add('toDoCardTitle');
+    toDoCardTitle.innerText = 'Card title';
+    const toDoDescription = document.createElement('textarea');
+    toDoDescription.classList.add('toDoDescription');
+    toDoDescription.setAttribute('placeholder', 'Description...');
+    toDoCardText.append(toDoCardTitle, toDoDescription);
 
-    deleteContainerBtn.appendChild(trashIcon);
-    editToDoTitleBtn.appendChild(penIcon);
-    toDoContainerActions.append(editToDoTitleBtn, deleteContainerBtn);
-    toDoTitleContainer.append(toDoTitle, toDoContainerActions);
-    toDoContainer.appendChild(toDoTitleContainer);
+    const toDoCardActions = document.createElement('div');
+    toDoCardActions.classList.add('toDoCardActions');
+    const deleteCardBtn = document.createElement('button');
+    deleteCardBtn.classList.add('deleteCardBtn');
+    const deleteCardIcon = document.createElement('i');
+    deleteCardIcon.classList.add('fa-solid', 'fa-trash');
+    deleteCardBtn.appendChild(deleteCardIcon);
+    toDoCardActions.appendChild(deleteCardBtn);
 
-    return toDoContainer;
+    toDoCard.append(dragBar, toDoDone, toDoCardText, toDoCardActions);
+
+    return toDoCard;
 }
 
-/*Add ToDo Container*/
-const toDoBoard = document.querySelector('.toDoBoard');
-const addContainerBtn = document.querySelector('.addToDoContainerBtn');
-
-addContainerBtn.addEventListener('click', () => {
-    const toDoContainer = createToDoContainer();
-    toDoBoard.appendChild(toDoContainer);
+/*Add toDoCard event*/
+const toDoList = document.querySelector('.toDoList');
+const addToDoCardBtn = document.querySelector('.addToDoCard');
+addToDoCardBtn.addEventListener('click', () => {
+    const toDoCard = createToDoCard();
+    toDoList.appendChild(toDoCard);
 });
