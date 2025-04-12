@@ -13,6 +13,7 @@ body {
     justify-content: space-evenly;
 
     max-height: 100vh;
+    max-width: 100%;
 
     font-family: 'Montserrat', sans-serif;
     color: rgba(255, 255, 255, 0.9);
@@ -22,7 +23,8 @@ body {
     background-size: 20px 20px;
 }
 
-header, footer {
+header,
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +33,8 @@ header, footer {
     width: 100%;
 }
 
-.pageTitle, .footerText {
+.pageTitle,
+.footerText {
     background-color: #000;
     letter-spacing: 1px;
 }
@@ -39,7 +42,6 @@ header, footer {
 
 main {
     display: flex;
-    justify-content: center;
     align-items: center;
 
     height: 80vh;
@@ -50,9 +52,28 @@ main {
     display: flex;
     align-items: center;
 
-    padding: 10px;
-    height: 100%;
-    width: 100%;
+    overflow: auto;
+
+    padding: 0 5px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .toDoContainer {
@@ -68,8 +89,8 @@ main {
 
     padding: 10px;
     margin: 10px;
-    height: 100%;
-    width: 375px;
+    height: 725px;
+    min-width: 375px;
 }
 
 .toDoTitleContainer {
@@ -85,9 +106,20 @@ main {
     height: 8%;
 }
 
-.editToDoTitleBtn{
+.editToDoTitleBtn {
     background-color: transparent;
     border: none;
+
+    color: #FFF;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.deleteContainerBtn {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
 
     color: #FFF;
     font-size: 20px;
@@ -102,8 +134,8 @@ main {
 
     overflow: auto;
 
-    padding: 10px;
-    height: 92%;
+    padding: 10px 10px 0 10px;
+    min-height: 145px;
     width: 100%;
 }
 
@@ -130,7 +162,7 @@ main {
     justify-content: center;
 
     background-color: #1C2F53;
-    
+
     border-radius: 7px 0 0 7px;
     height: 100%;
     width: 30px;
@@ -185,6 +217,50 @@ main {
 
     color: #000;
     font-size: 20px;
+
+    cursor: pointer;
+}
+
+.addToDoCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(236, 236, 236, 0.3);
+
+    border-radius: 15px;
+    height: 30px;
+    width: 335px;
+}
+
+.addToDoCardBtn {
+    color: #FFF;
+    font-size: 20px;
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.addToDoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(236, 236, 236, 0.3);
+
+    border-radius: 15px;
+    height: 725px;
+    width: 30px;
+}
+
+.addToDoContainerBtn {
+    color: #FFF;
+    font-size: 20px;
+    background-color: transparent;
+
+    border: none;
 
     cursor: pointer;
 }

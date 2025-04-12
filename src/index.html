@@ -25,9 +25,14 @@
 
                 <div class="toDoTitleContainer">
                     <h2 class="toDoTitle">Container Title</h2>
-                    <button class="editToDoTitleBtn">
-                        <i class="fa-solid fa-pen"></i>
-                    </button>
+                    <div class="toDoContainerActions">
+                        <span class="editToDoTitleBtn">
+                            <i class="fa-solid fa-pen"></i>
+                        </span>
+                        <span class="deleteContainerBtn">
+                            <i class="fa-solid fa-trash"></i>
+                        </span>
+                    </div>
                 </div>
 
                 <ul class="toDoList">
@@ -40,45 +45,7 @@
                         <input class="toDoDone" type="checkbox">
 
                         <div class="toDoCardText">
-                            <h3 class="toDoCardTitle">Chest Workout</h3>
-                            <textarea name="toDoDescription" class="toDoDescription" placeholder="Description..."></textarea>
-                        </div>
-
-                        <div class="toDoCardActions">
-                            <button class="deleteCardBtn">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </li>
-
-                    <li class="toDoCard">
-                        <div class="dragBar">
-                            <button class="dragBtn"></button>
-                        </div>
-
-                        <input class="toDoDone" type="checkbox">
-
-                        <div class="toDoCardText">
-                            <h3 class="toDoCardTitle">Chest Workout</h3>
-                            <textarea name="toDoDescription" class="toDoDescription" placeholder="Description..."></textarea>
-                        </div>
-
-                        <div class="toDoCardAction">
-                            <button class="deleteCardBtn">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
-                    </li>
-
-                    <li class="toDoCard">
-                        <div class="dragBar">
-                            <button class="dragBtn"></button>
-                        </div>
-
-                        <input class="toDoDone" type="checkbox">
-
-                        <div class="toDoCardText">
-                            <h3 class="toDoCardTitle">Chest Workout</h3>
+                            <h3 class="toDoCardTitle">Card Title</h3>
                             <textarea name="toDoDescription" class="toDoDescription" placeholder="Description..."></textarea>
                         </div>
 
@@ -91,16 +58,29 @@
 
                 </ul>
 
+                <div class="addToDoCard">
+                    <button class="addToDoCardBtn">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
             </div>
 
-            
-
         </section>
+
+        <section class="addToDoContainer">
+            <button class="addToDoContainerBtn">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </section>
+
     </main>
 
     <footer>
         <p class="footerText">Designed and Developed by Arthur &copy;</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
