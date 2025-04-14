@@ -51,6 +51,28 @@ addToDoCardBtn.addEventListener('click', () => {
     toDoList.appendChild(toDoCard);
 });
 
+/*Edit Container Title*/
+const toDoTitleInputContainer = document.querySelector('.toDoTitleInputContainer');
+const toDoTitleInput = document.querySelector('.toDoTitleInput');
+const toDoTitle = document.querySelector('.toDoTitle');
+const toDoTitleCheckBtn = document.querySelector('.toDoTitleCheckBtn');
+const editToDoTitleBtn = document.querySelector('.editToDoTitleBtn');
+
+editToDoTitleBtn.addEventListener('click', () => {
+    toDoTitle.classList.add('hidden');
+    toDoTitleInputContainer.classList.remove('hidden');
+});
+
+toDoTitleCheckBtn.addEventListener('click', () => {
+    setTitle(toDoTitle, toDoTitleInput, toDoTitleInputContainer);
+});
+
+function setTitle(tDT, tDTI, tDTIC) {
+    tDT.innerText = tDTI.value;
+    tDTIC.classList.add('hidden');
+    tDT.classList.remove('hidden');
+}
+
 /*Mark ToDo Done*/
 function addEventMarkToDoDone(toDoCheckbox, toDoTitle, toDoDescription) {
     toDoCheckbox.addEventListener('click', () => {
