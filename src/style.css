@@ -98,13 +98,75 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    letter-spacing: 1px;
+    position: relative;
 
     padding: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 8%;
+}
+
+.toDoTitleInputContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    position: absolute;
+
+    padding: 10px 0 10px 0;
+    height: 100%;
+    width: 75%;
+}
+
+.toDoTitleInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    border-radius: 10px 0 0 10px;
+
+    background-color: transparent;
+
+    color: #FFF;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    padding-left: 10px;
+    height: 100%;
+    width: 90%;
+
+    outline: none;
+}
+
+.toDoTitleCheckBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    border-radius: 0 10px 10px 0;
+
+    background-color: transparent;
+
+    height: 100%;
+    width: 10%;
+}
+
+.toDoTitle {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hidden {
+    display: none;
+}
+
+.toDoContainerActions {
+    position: absolute;
+    right: 10px;
 }
 
 .editToDoTitleBtn {
@@ -181,8 +243,7 @@ main {
     cursor: grab;
 }
 
-.toDoDone {
-    background-color: #000;
+.toDoCheck {
     height: 20px;
     width: 20px;
 }
@@ -210,6 +271,12 @@ main {
     width: 100%;
     height: 100px;
     resize: none;
+}
+
+.toDoDone {
+    font-style: italic;
+    text-decoration: line-through;
+    color: #888;
 }
 
 .deleteCardBtn {

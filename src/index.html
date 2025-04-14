@@ -24,14 +24,20 @@
             <div class="toDoContainer">
 
                 <div class="toDoTitleContainer">
-                    <h2 class="toDoTitle">Container Title</h2>
+                    <div class="toDoTitleInputContainer">
+                        <input class="toDoTitleInput" type="text">
+                        <button class="toDoTitleCheckBtn">
+                            <i class="fa-solid fa-check"></i>
+                        </button>
+                    </div>
+                    <p class="toDoTitle hidden">Container Title</p>
                     <div class="toDoContainerActions">
                         <span class="editToDoTitleBtn">
                             <i class="fa-solid fa-pen"></i>
                         </span>
-                        <!--<span class="deleteContainerBtn">
+                        <span class="deleteContainerBtn">
                             <i class="fa-solid fa-trash"></i>
-                        </span>-->
+                        </span>
                     </div>
                 </div>
 
@@ -42,7 +48,7 @@
                             <button class="dragBtn"></button>
                         </div>
 
-                        <input class="toDoDone" type="checkbox">
+                        <input class="toDoCheck" type="checkbox" onclick="markToDoDone()">
 
                         <div class="toDoCardText">
                             <h3 class="toDoCardTitle">Card Title</h3>

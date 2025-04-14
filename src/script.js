@@ -1,5 +1,7 @@
 /*Create a new toDoCard*/
 function createToDoCard() {
+
+    /*Creating element*/
     const toDoCard = document.createElement('li');
     toDoCard.classList.add('toDoCard');
     
@@ -9,15 +11,15 @@ function createToDoCard() {
     dragBtn.classList.add('dragBtn');
     dragBar.appendChild(dragBtn);
 
-    const toDoDone = document.createElement('input');
-    toDoDone.classList.add('toDoDone');
-    toDoDone.setAttribute('type', 'checkbox');
+    const toDoCheckbox = document.createElement('input');
+    toDoCheckbox.classList.add('toDoCheck');
+    toDoCheckbox.setAttribute('type', 'checkbox');
 
     const toDoCardText = document.createElement('div');
     toDoCardText.classList.add('toDoCardText');
     const toDoCardTitle = document.createElement('h3');
     toDoCardTitle.classList.add('toDoCardTitle');
-    toDoCardTitle.innerText = 'Card title';
+    toDoCardTitle.innerText = 'Card Title';
     const toDoDescription = document.createElement('textarea');
     toDoDescription.classList.add('toDoDescription');
     toDoDescription.setAttribute('placeholder', 'Description...');
@@ -32,7 +34,11 @@ function createToDoCard() {
     deleteCardBtn.appendChild(deleteCardIcon);
     toDoCardActions.appendChild(deleteCardBtn);
 
-    toDoCard.append(dragBar, toDoDone, toDoCardText, toDoCardActions);
+    toDoCard.append(dragBar, toDoCheckbox, toDoCardText, toDoCardActions);
+
+    /*Adding events to the element*/
+    addEventMarkToDoDone(toDoCheckbox, toDoCardTitle, toDoDescription);
+    addEventToDeleteCard(deleteCardBtn);
 
     return toDoCard;
 }
@@ -44,3 +50,26 @@ addToDoCardBtn.addEventListener('click', () => {
     const toDoCard = createToDoCard();
     toDoList.appendChild(toDoCard);
 });
+
+/*Mark ToDo Done*/
+function addEventMarkToDoDone(toDoCheckbox, toDoTitle, toDoDescription) {
+    toDoCheckbox.addEventListener('click', () => {
+        if (toDoCheckbox.checked == true) {
+            toDoTitle.classList.add('toDoDone');
+            toDoDescription.classList.add('toDoDone');
+            toDoDescription.setAttribute('disabled', 'true');
+        } else {
+            toDoTitle.classList.remove('toDoDone');
+            toDoDescription.classList.remove('toDoDone');
+            toDoDescription.removeAttribute('disabled');
+        }
+    });
+}
+
+/*Delete Card*/
+function addEventToDeleteCard(btnToAddEvent) {
+    btnToAddEvent.addEventListener('click', () => {
+        const toDoCard = btnToAddEvent.parentElement.parentElement;
+        toDoCard.remove();
+    });
+}
