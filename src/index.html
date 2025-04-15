@@ -43,7 +43,36 @@
 
                 <ul class="toDoList">
 
-                    
+                    <li class="toDoCard">
+                        <div class="dragBar">
+                            <button class="dragBtn"></button>
+                        </div>
+
+                        <input class="toDoCheck" type="checkbox" onclick="markToDoDone()">
+
+                        <div class="toDoCardText">
+                            <div class="toDoCardTitleContainer">
+                                <div class="toDoCardTitleInputContainer">
+                                    <input class="toDoCardTitleInput" type="text" maxlength="25" placeholder="Card Title...">
+                                    <button class="toDoCardTitleCheckBtn">
+                                        <i class="fa-solid fa-check"></i>
+                                    </button>
+                                </div>
+                                <p class="toDoCardTitle hidden">Card Title</p>
+                                <button class="editToDoCardTitleBtn">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                            </div>
+                            
+                            <textarea class="toDoDescription" placeholder="Description..."></textarea>
+                        </div>
+
+                        <div class="toDoCardActions">
+                            <button class="deleteCardBtn">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </li>
 
                 </ul>
 

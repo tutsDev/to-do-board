@@ -258,9 +258,65 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: inherit;
+
     height: 115px;
     width: 325px;
+}
+
+.toDoCardTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    height: 55px;
+}
+
+.toDoCardTitleInputContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.toDoCardTitleInput {
+    background-color: transparent;
+
+    border: 1px solid #CCC;
+    border-radius: 10px 0 0 10px;
+    
+    padding-left: 10px;
+    height: 30px;
+    width: 250px;
+
+    outline: none;
+}
+
+.editToDoCardTitleBtn {
+    position: absolute;
+    right: 5px;
+}
+
+.toDoCardTitleCheckBtn, .editToDoCardTitleBtn {
+    background-color: transparent;
+    border: none;
+
+    color: #000;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.toDoCardTitleCheckBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    border-radius: 0 10px 10px 0;
+
+    height: 30px;
+    width: 30px;
 }
 
 .toDoCardTitle {
@@ -274,9 +330,12 @@ main {
     padding: 5px;
     border: 2px solid #ccc;
     border-radius: 4px;
+
     width: 100%;
     height: 100px;
     resize: none;
+
+    outline: none;
 }
 
 .toDoDone {

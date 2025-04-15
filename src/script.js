@@ -67,6 +67,22 @@ toDoTitleCheckBtn.addEventListener('click', () => {
     setTitle(toDoTitle, toDoTitleInput, toDoTitleInputContainer);
 });
 
+//CARD
+const toDoCardTitleInputContainer = document.querySelector('.toDoCardTitleInputContainer');
+const toDoCardTitleInput = document.querySelector('.toDoCardTitleInput');
+const toDoCardTitle = document.querySelector('.toDoCardTitle');
+const toDoCardTitleCheckBtn = document.querySelector('.toDoCardTitleCheckBtn');
+const editToDoCardTitleBtn = document.querySelector('.editToDoCardTitleBtn');
+
+editToDoCardTitleBtn.addEventListener('click', () => {
+    toDoCardTitle.classList.add('hidden');
+    toDoCardTitleInputContainer.classList.remove('hidden');
+});
+
+toDoCardTitleCheckBtn.addEventListener('click', () => {
+    setTitle(toDoCardTitle, toDoCardTitleInput, toDoCardTitleInputContainer);
+});
+
 function setTitle(tDT, tDTI, tDTIC) {
     tDT.innerText = tDTI.value;
     tDTIC.classList.add('hidden');
