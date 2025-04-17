@@ -9,69 +9,77 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../image/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/pageStyle.css">
+    <link rel="stylesheet" href="./css/boardStyle.css">
+    <link rel="stylesheet" href="./css/toDoContainerStyle.css">
+    <link rel="stylesheet" href="./css/toDoCardStyle.css">
+
 </head>
 
 <body>
-    <header>
-        <h1 class="pageTitle">Welcome to the To-Do Board</h1>
+    <header class="pageHeader">
+        <h1>Welcome to the To-Do Board</h1>
+        <aside class="contactLinks">
+            <a href="https://github.com/tutsDev" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tutsdev/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </aside>
     </header>
 
-    <main>
+    <main class="pageContent">
 
         <section class="toDoBoard">
 
-            <div class="toDoContainer">
+            <article class="toDoContainer">
 
-                <div class="toDoTitleContainer">
-                    <div class="toDoTitleInputContainer">
-                        <input class="toDoTitleInput" type="text" maxlength="25">
-                        <button class="toDoTitleCheckBtn">
+                <div class="toDoContainerText">
+                    <div class="toDoContainerTitleInputBox">
+                        <input class="toDoContainerTitleInput" type="text" maxlength="25">
+                        <button class="toDoContainerTitleBtn">
                             <i class="fa-solid fa-check"></i>
                         </button>
                     </div>
-                    <p class="toDoTitle hidden">Container Title</p>
+                    <p class="toDoContainerTitle hidden">Container Title</p>
                     <div class="toDoContainerActions">
-                        <span class="editToDoTitleBtn">
+                        <span class="editToDoContainerTitleBtn">
                             <i class="fa-solid fa-pen"></i>
                         </span>
-                        <span class="deleteContainerBtn">
+                        <span class="deleteToDoContainerBtn">
                             <i class="fa-solid fa-trash"></i>
                         </span>
                     </div>
                 </div>
 
-                <ul class="toDoList">
+                <ul class="toDoCardList">
 
                     <li class="toDoCard">
                         <div class="dragBar">
-                            <button class="dragBtn"></button>
+                            <button class="dragBarBtn"></button>
                         </div>
 
-                        <input class="toDoCheck" type="checkbox" onclick="markToDoDone()">
+                        <input class="markToDoDone" type="checkbox">
 
                         <div class="toDoCardText">
-                            <div class="toDoCardTitleContainer">
-                                <div class="toDoCardTitleInputContainer">
-                                    <input class="toDoCardTitleInput" type="text" maxlength="25" placeholder="Card Title...">
-                                    <button class="toDoCardTitleCheckBtn">
+                            <div class="toDoCardTitleBox">
+                                <div class="toDoCardTitleInputBox">
+                                    <input class="toDoCardTitleInput" type="text" maxlength="25"
+                                        placeholder="Card title...">
+                                    <button class="toDoCardTitleBtn">
                                         <i class="fa-solid fa-check"></i>
                                     </button>
                                 </div>
-                                <p class="toDoCardTitle hidden">Card Title</p>
+                                <p class="toDoCardTitle">Card Title</p>
                                 <button class="editToDoCardTitleBtn">
                                     <i class="fa-solid fa-pen"></i>
                                 </button>
                             </div>
-                            
-                            <textarea class="toDoDescription" placeholder="Description..."></textarea>
+
+                            <textarea class="toDoCardDescription" placeholder="Description..."></textarea>
                         </div>
 
-                        <div class="toDoCardActions">
-                            <button class="deleteCardBtn">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </div>
+                        <button class="deleteCardBtn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </li>
 
                 </ul>
@@ -82,19 +90,19 @@
                     </button>
                 </div>
 
-            </div>
+            </article>
 
         </section>
 
-        <!--<section class="addToDoContainer">
+        <section class="addToDoContainer">
             <button class="addToDoContainerBtn">
                 <i class="fa-solid fa-plus"></i>
             </button>
-        </section>-->
+        </section>
 
     </main>
 
-    <footer>
+    <footer class="pageFooter">
         <p class="footerText">Designed and Developed by Arthur &copy;</p>
     </footer>
 

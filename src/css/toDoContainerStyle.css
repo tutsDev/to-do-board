@@ -1,0 +1,154 @@
+.toDoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    padding: 5px;
+    margin: 10px;
+    height: 95%;
+    min-width: 475px;
+}
+
+.toDoContainerText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 8%;
+}
+
+.toDoContainerTitleInputBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+
+    padding: 10px 0 10px 0;
+    height: 100%;
+    width: 75%;
+}
+
+.toDoContainerTitleInput {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    border-radius: 10px 0 0 10px;
+
+    background-color: transparent;
+
+    color: #FFF;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: 700;
+
+    padding-left: 10px;
+    height: 100%;
+    width: 90%;
+
+    outline: none;
+}
+
+.toDoContainerTitleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #CCC;
+    border-radius: 0 10px 10px 0;
+
+    background-color: transparent;
+    color: #FFF;
+    font-size: 20px;
+
+    height: 100%;
+    width: 10%;
+
+    cursor: pointer;
+}
+
+.toDoContainerTitle {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.toDoContainerActions {
+    position: absolute;
+    right: 10px;
+}
+
+.editToDoContainerTitleBtn {
+    background-color: transparent;
+    border: none;
+
+    color: #FFF;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.deleteToDoContainerBtn {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+
+    color: #FFF;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.deleteToDoContainerBtn:hover {
+    color: #B82121;
+}
+
+.toDoCardList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: auto;
+
+    padding: 10px 10px 0 10px;
+    max-height: 85%;
+    width: 100%;
+}
+
+.addToDoCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(236, 236, 236, 0.3);
+
+    border-radius: 15px;
+    height: 30px;
+    width: 335px;
+}
+
+.addToDoCardBtn {
+    color: #FFF;
+    font-size: 20px;
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+}

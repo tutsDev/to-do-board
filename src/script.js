@@ -1,113 +1,93 @@
 /*Create a new toDoCard*/
 function createToDoCard() {
-
-    /*Creating element*/
+    /*Creating Card*/
     const toDoCard = document.createElement('li');
     toDoCard.classList.add('toDoCard');
     
+    /*Creating DragBar*/
     const dragBar = document.createElement('div');
     dragBar.classList.add('dragBar');
-    const dragBtn = document.createElement('button');
-    dragBtn.classList.add('dragBtn');
-    dragBar.appendChild(dragBtn);
+    const dragBarBtn = document.createElement('button');
+    dragBarBtn.classList.add('dragBarBtn');
 
-    const toDoCheckbox = document.createElement('input');
-    toDoCheckbox.classList.add('toDoCheck');
-    toDoCheckbox.setAttribute('type', 'checkbox');
+    /*Creating MarkToDoDone*/
+    const markToDoDone = document.createElement('input');
+    markToDoDone.classList.add('markToDoDone');
+    markToDoDone.setAttribute('type', 'checkbox');
 
+    /*Creating ToDoTextArea*/
     const toDoCardText = document.createElement('div');
     toDoCardText.classList.add('toDoCardText');
-    const toDoCardTitle = document.createElement('h3');
-    toDoCardTitle.classList.add('toDoCardTitle');
-    toDoCardTitle.innerText = 'Card Title';
-    const toDoDescription = document.createElement('textarea');
-    toDoDescription.classList.add('toDoDescription');
-    toDoDescription.setAttribute('placeholder', 'Description...');
-    toDoCardText.append(toDoCardTitle, toDoDescription);
 
-    const toDoCardActions = document.createElement('div');
-    toDoCardActions.classList.add('toDoCardActions');
+    const toDoCardTitleBox =document.createElement('div');
+    toDoCardTitleBox.classList.add('toDoCardTitleBox');
+
+    const toDoCardTitleInputBox = document.createElement('div');
+    toDoCardTitleInputBox.classList.add('toDoCardTitleInputBox');
+
+    const toDoCardTitleInput = document.createElement('input');
+    toDoCardTitleInput.classList.add('toDoCardTitleInput');
+    toDoCardTitleInput.setAttribute('type', 'text');
+    toDoCardTitleInput.setAttribute('maxlength', '25');
+    toDoCardTitleInput.setAttribute('placeholder', 'Card title...');
+    const toDoCardTitleBtn = document.createElement('button');
+    toDoCardTitleBtn.classList.add('toDoCardTitleBtn');
+    const iconTitleBtn = document.createElement('i');
+    iconTitleBtn.classList.add('fa-solid', 'fa-check');
+
+    const toDoCardTitle = document.createElement('p');
+    toDoCardTitle.classList.add('toDoCardTitle', 'hidden');
+
+    const editToDoCardTitleBtn = document.createElement('button');
+    editToDoCardTitleBtn.classList.add('editToDoCardTitleBtn');
+    const iconEditTitleBtn = document.createElement('i');
+    iconEditTitleBtn.classList.add('fa-solid', 'fa-pen');
+
+    const toDoCardDescription = document.createElement('textarea');
+    toDoCardDescription.classList.add('toDoCardDescription');
+    toDoCardDescription.setAttribute('placeholder', 'Description...');
+
+    /*Creating DeleteCardBtn*/
     const deleteCardBtn = document.createElement('button');
     deleteCardBtn.classList.add('deleteCardBtn');
-    const deleteCardIcon = document.createElement('i');
-    deleteCardIcon.classList.add('fa-solid', 'fa-trash');
-    deleteCardBtn.appendChild(deleteCardIcon);
-    toDoCardActions.appendChild(deleteCardBtn);
+    const iconDeleteCard = document.createElement('i');
+    iconDeleteCard.classList.add('fa-solid', 'fa-trash');
 
-    toDoCard.append(dragBar, toDoCheckbox, toDoCardText, toDoCardActions);
-
-    /*Adding events to the element*/
-    addEventMarkToDoDone(toDoCheckbox, toDoCardTitle, toDoDescription);
-    addEventToDeleteCard(deleteCardBtn);
+    /*Appending Child*/
+    deleteCardBtn.appendChild(iconDeleteCard);
+    toDoCardTitleBtn.appendChild(iconTitleBtn);
+    toDoCardTitleInputBox.append(toDoCardTitleInput, toDoCardTitleBtn);
+    editToDoCardTitleBtn.appendChild(iconEditTitleBtn);
+    toDoCardTitleBox.append(toDoCardTitleInputBox, toDoCardTitle, editToDoCardTitleBtn);
+    toDoCardText.append(toDoCardTitleBox, toDoCardDescription);
+    dragBar.appendChild(dragBarBtn);
+    toDoCard.append(dragBar, markToDoDone, toDoCardText, deleteCardBtn);
 
     return toDoCard;
 }
 
-/*Add toDoCard event*/
-const toDoList = document.querySelector('.toDoList');
-const addToDoCardBtn = document.querySelector('.addToDoCard');
+/*Create a new toDoContainer*/
+function createToDoContainer() {
+    /*Creating Container*/
+    const toDoContainer = document.createElement('article');
+    toDoContainer.classList.add('toDoContainer');
+
+    return toDoContainer
+}
+
+/*AddToDoContainer event*/
+const toDoBoard = document.querySelector('.toDoBoard');
+const addToDoContainerBtn = document.querySelector('.addToDoContainerBtn');
+addToDoContainerBtn.addEventListener('click', () => {
+    const toDoCard = createToDoContainer();
+    toDoBoard.appendChild(toDoCard);
+});
+
+
+/*AddToDocard event*/
+const toDoList = document.querySelector('.toDoCardList');
+const addToDoCardBtn = document.querySelector('.addToDoCardBtn');
 addToDoCardBtn.addEventListener('click', () => {
     const toDoCard = createToDoCard();
     toDoList.appendChild(toDoCard);
 });
-
-/*Edit Container Title*/
-const toDoTitleInputContainer = document.querySelector('.toDoTitleInputContainer');
-const toDoTitleInput = document.querySelector('.toDoTitleInput');
-const toDoTitle = document.querySelector('.toDoTitle');
-const toDoTitleCheckBtn = document.querySelector('.toDoTitleCheckBtn');
-const editToDoTitleBtn = document.querySelector('.editToDoTitleBtn');
-
-editToDoTitleBtn.addEventListener('click', () => {
-    toDoTitle.classList.add('hidden');
-    toDoTitleInputContainer.classList.remove('hidden');
-});
-
-toDoTitleCheckBtn.addEventListener('click', () => {
-    setTitle(toDoTitle, toDoTitleInput, toDoTitleInputContainer);
-});
-
-//CARD
-const toDoCardTitleInputContainer = document.querySelector('.toDoCardTitleInputContainer');
-const toDoCardTitleInput = document.querySelector('.toDoCardTitleInput');
-const toDoCardTitle = document.querySelector('.toDoCardTitle');
-const toDoCardTitleCheckBtn = document.querySelector('.toDoCardTitleCheckBtn');
-const editToDoCardTitleBtn = document.querySelector('.editToDoCardTitleBtn');
-
-editToDoCardTitleBtn.addEventListener('click', () => {
-    toDoCardTitle.classList.add('hidden');
-    toDoCardTitleInputContainer.classList.remove('hidden');
-});
-
-toDoCardTitleCheckBtn.addEventListener('click', () => {
-    setTitle(toDoCardTitle, toDoCardTitleInput, toDoCardTitleInputContainer);
-});
-
-function setTitle(tDT, tDTI, tDTIC) {
-    tDT.innerText = tDTI.value;
-    tDTIC.classList.add('hidden');
-    tDT.classList.remove('hidden');
-}
-
-/*Mark ToDo Done*/
-function addEventMarkToDoDone(toDoCheckbox, toDoTitle, toDoDescription) {
-    toDoCheckbox.addEventListener('click', () => {
-        if (toDoCheckbox.checked == true) {
-            toDoTitle.classList.add('toDoDone');
-            toDoDescription.classList.add('toDoDone');
-            toDoDescription.setAttribute('disabled', 'true');
-        } else {
-            toDoTitle.classList.remove('toDoDone');
-            toDoDescription.classList.remove('toDoDone');
-            toDoDescription.removeAttribute('disabled');
-        }
-    });
-}
-
-/*Delete Card*/
-function addEventToDeleteCard(btnToAddEvent) {
-    btnToAddEvent.addEventListener('click', () => {
-        const toDoCard = btnToAddEvent.parentElement.parentElement;
-        toDoCard.remove();
-    });
-}

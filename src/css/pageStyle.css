@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    max-height: 100vh;
+    max-width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+
+    background-image: radial-gradient(circle at 1px 1px, #2E2E2E 1px, #000 0);
+    background-position: center center;
+    background-size: 20px 20px;
+}
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+    height: 10vh;
+    width: 100%;
+}
+
+.pageHeader h1 {
+    background-color: #000;
+    font-weight: 500;
+}
+
+.contactLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 40px;
+    width: 90px;
+}
+
+.contactLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #FFF;
+    font-size: 30px;
+    text-decoration: none;
+
+    height: 100%;
+    width: 100px;
+
+    transition: 0.3s;
+}
+
+.contactLinks a:hover {
+    text-shadow: 3px 3px 15px #888;
+    scale: 1.1;
+}
+
+.pageContent {
+    display: flex;
+    align-items: center;
+
+    overflow: auto;
+
+    padding: 5px;
+    height: 85vh;
+    width: 100%;
+}
+
+.pageFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5vh;
+    width: 100%;
+}
+
+/*ScrollBar Styles*/
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

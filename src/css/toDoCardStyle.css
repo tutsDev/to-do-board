@@ -1,0 +1,156 @@
+.toDoCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #000;
+    background-color: #FFF;
+
+    list-style: none;
+
+    padding: 0 10px 0 0;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    min-height: 125px;
+    width: 100%;
+}
+
+.dragBar {
+    display: flex;
+    align-items: center;
+
+    background-color: #1C2F53;
+
+    padding-left: 4px;
+    border-radius: 7px 0 0 7px;
+    height: 100%;
+    width: 30px;
+}
+
+.dragBarBtn {
+    background-image: radial-gradient(circle at 1px 1px, #83B0F8 1px, #1C2F53 0);
+    background-position: center center;
+    background-size: 5px 5px;
+
+    border: none;
+    height: 45px;
+    width: 20px;
+
+    cursor: grab;
+}
+
+.markToDoDone {
+    height: 20px;
+    width: 20px;
+}
+
+.toDoCardText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 115px;
+    width: 325px;
+}
+
+.toDoCardTitleBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    height: 55px;
+}
+
+.toDoCardTitleInputBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.toDoCardTitleInput {
+    background-color: #FFF;
+
+    border: 1px solid #CCC;
+    border-radius: 10px 0 0 10px;
+
+    padding-left: 10px;
+    height: 30px;
+    width: 250px;
+
+    outline: none;
+}
+
+.toDoCardTitleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #FFF;
+
+    color: #000;
+    font-size: 20px;
+
+    border: 1px solid #CCC;
+    border-radius: 0 10px 10px 0;
+    height: 30px;
+    width: 30px;
+
+    cursor: pointer;
+}
+
+.editToDoCardTitleBtn {
+    position: absolute;
+    right: 5px;
+
+    background-color: #FFF;
+    border: none;
+
+    color: #000;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.toDoCardDescription {
+    background-color: #f8f8f8;
+    font-size: 16px;
+
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+
+    width: 100%;
+    height: 100px;
+    resize: none;
+
+    outline: none;
+}
+
+.deleteCardBtn {
+    background-color: transparent;
+    border: none;
+
+    color: #000;
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.deleteCardBtn:hover {
+    color: #B82121;
+    scale: 1.05;
+}
+
+.toDoDone {
+    font-style: italic;
+    text-decoration: line-through;
+    color: #888;
+}
+
+.hidden {
+    display: none;
+}
