@@ -53,7 +53,7 @@ function createToDoCard() {
     const iconDeleteCard = document.createElement('i');
     iconDeleteCard.classList.add('fa-solid', 'fa-trash');
 
-    /*Appending Child*/
+    /*Appending Childs*/
     deleteCardBtn.appendChild(iconDeleteCard);
     toDoCardTitleBtn.appendChild(iconTitleBtn);
     toDoCardTitleInputBox.append(toDoCardTitleInput, toDoCardTitleBtn);
@@ -71,6 +71,62 @@ function createToDoContainer() {
     /*Creating Container*/
     const toDoContainer = document.createElement('article');
     toDoContainer.classList.add('toDoContainer');
+
+    /*Creating ToDoTextArea*/
+    const toDoContainerText = document.createElement('div');
+    toDoContainerText.classList.add('toDoContainerText');
+
+    const toDoContainerTitleInputBox = document.createElement('div');
+    toDoContainerTitleInputBox.classList.add('toDoContainerTitleInputBox');
+
+    const toDoContainerTitleInput = document.createElement('input');
+    toDoContainerTitleInput.classList.add('toDoContainerTitleInput');
+    toDoContainerTitleInput.setAttribute('type', 'text');
+    toDoContainerTitleInput.setAttribute('maxlength', '25');
+    toDoContainerTitleInput.setAttribute('placeholder', 'Card title...');
+    const toDoContainerTitleBtn = document.createElement('button');
+    toDoContainerTitleBtn.classList.add('toDoContainerTitleBtn');
+    const iconTitleBtn = document.createElement('i');
+    iconTitleBtn.classList.add('fa-solid', 'fa-check');
+
+    const toDoContainerTitle = document.createElement('p');
+    toDoContainerTitle.classList.add('toDoContainerTitle', 'hidden');
+
+    const toDoContaierActions = document.createElement('div');
+    toDoContaierActions.classList.add('toDoContainerActions')
+
+    const editToDoContainerTitleBtn = document.createElement('button');
+    editToDoContainerTitleBtn.classList.add('editToDoContainerTitleBtn');
+    const iconEditTitleBtn = document.createElement('i');
+    iconEditTitleBtn.classList.add('fa-solid', 'fa-pen');
+
+    const deleteToDoContainerTitleBtn = document.createElement('button');
+    deleteToDoContainerTitleBtn.classList.add('deleteToDoContainerBtn');
+    const iconDeleteTitleBtn = document.createElement('i');
+    iconDeleteTitleBtn.classList.add('fa-solid', 'fa-trash');
+
+    /*Creating ToDList*/
+    const toDoCardList = document.createElement('ul');
+    toDoCardList.classList.add('toDoCardList');
+
+    const addToDoCard = document.createElement('div');
+    addToDoCard.classList.add('addToDoCard');
+
+    const addToDoCardBtn = document.createElement('button');
+    addToDoCardBtn.classList.add('addToDoCardBtn');
+    const iconAddCardBtn = document.createElement('i');
+    iconAddCardBtn.classList.add('fa-solid', 'fa-plus');
+
+    /*Appending Childs*/
+    addToDoCardBtn.appendChild(iconAddCardBtn);
+    addToDoCard.appendChild(addToDoCardBtn);
+    deleteToDoContainerTitleBtn.appendChild(iconDeleteTitleBtn);
+    editToDoContainerTitleBtn.appendChild(iconEditTitleBtn);
+    toDoContaierActions.append(editToDoContainerTitleBtn, deleteToDoContainerTitleBtn);
+    toDoContainerTitleBtn.appendChild(iconTitleBtn);
+    toDoContainerTitleInputBox.append(toDoContainerTitleInput, toDoContainerTitleBtn);
+    toDoContainerText.append(toDoContainerTitleInputBox, toDoContainerTitle, toDoContaierActions);
+    toDoContainer.append(toDoContainerText, toDoCardList, addToDoCard);
 
     return toDoContainer
 }
