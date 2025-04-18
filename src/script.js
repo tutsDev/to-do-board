@@ -63,6 +63,11 @@ function createToDoCard() {
     dragBar.appendChild(dragBarBtn);
     toDoCard.append(dragBar, markToDoDone, toDoCardText, deleteCardBtn);
 
+    /*Adding events*/
+    editToDoCardTitle(toDoCardTitle, toDoCardTitleInput, toDoCardTitleBtn, editToDoCardTitleBtn);
+    markToDoCardAsDone(markToDoDone, toDoCardTitle, toDoCardDescription);
+    deleteToDoCard(toDoCard, deleteCardBtn);
+
     return toDoCard;
 }
 
@@ -160,8 +165,8 @@ function editToDoContainerTitle(toDoContainerTitle, toDoContainerTitleInput, toD
         toDoContainerTitleInput.classList.remove('hidden');
         toDoContainerTitleBtn.classList.remove('hidden');
         toDoContainerTitle.classList.add('hidden');
-        setTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn);
     });   
+    setTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn);
 }
 
 /*DeleteToDoContainer function*/
@@ -179,3 +184,34 @@ function addToDoCardEvent(toDoCardList, addToDoCardBtn) {
     });
 }
 
+/*EditToDoCardTitle funciotn*/
+function editToDoCardTitle(toDoCardTitle, toDoCardTitleInput, toDoCardTitleBtn, editToDoCardTitleBtn) {
+    editToDoCardTitleBtn.addEventListener('click', () => {
+        toDoCardTitleInput.classList.remove('hidden');
+        toDoCardTitleBtn.classList.remove('hidden');
+        toDoCardTitle.classList.add('hidden');
+    });   
+    setTitle(toDoCardTitle, toDoCardTitleInput, toDoCardTitleBtn);
+}
+
+/*MarkToDoCardAsDone function*/
+function markToDoCardAsDone(toDoCheckbox, toDoTitle, toDoDescription) {
+    toDoCheckbox.addEventListener('click', () => {
+        if (toDoCheckbox.checked == true) {
+            toDoTitle.classList.add('toDoDone');
+            toDoDescription.classList.add('toDoDone');
+            toDoDescription.setAttribute('disabled', 'true');
+        } else {
+            toDoTitle.classList.remove('toDoDone');
+            toDoDescription.classList.remove('toDoDone');
+            toDoDescription.removeAttribute('disabled');
+        }
+    });
+}
+
+/*DeleteToDoCard function*/
+function deleteToDoCard(toDoCard, deletToDoCardBtn) {
+    deletToDoCardBtn.addEventListener('click', () => {
+        toDoCard.remove();
+    });
+}

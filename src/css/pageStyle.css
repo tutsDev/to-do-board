@@ -89,7 +89,7 @@ body {
 
 /*ScrollBar Styles*/
 ::-webkit-scrollbar {
-    height: 5px;
+    height: 7px;
     width: 5px;
     border-radius: 2.5px;
 }
