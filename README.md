@@ -8,7 +8,7 @@ Uma evolução da clássica To-Do List, o **To-Do Board** é um projeto pessoal 
 
 ## 🖼️ Preview
 
-![Preview do Projeto](./Captura%20de%20tela%202025-04-18%20131402.png)
+![Preview do Projeto](https://github.com/user-attachments/assets/21ce19df-5c4c-4d2d-98a4-3a92d1ce494f)
 
 ---
 
