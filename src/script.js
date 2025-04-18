@@ -100,8 +100,8 @@ function createToDoContainer() {
     const iconEditTitleBtn = document.createElement('i');
     iconEditTitleBtn.classList.add('fa-solid', 'fa-pen');
 
-    const deleteToDoContainerTitleBtn = document.createElement('button');
-    deleteToDoContainerTitleBtn.classList.add('deleteToDoContainerBtn');
+    const deleteToDoContainerBtn = document.createElement('button');
+    deleteToDoContainerBtn.classList.add('deleteToDoContainerBtn');
     const iconDeleteTitleBtn = document.createElement('i');
     iconDeleteTitleBtn.classList.add('fa-solid', 'fa-trash');
 
@@ -120,13 +120,18 @@ function createToDoContainer() {
     /*Appending Childs*/
     addToDoCardBtn.appendChild(iconAddCardBtn);
     addToDoCard.appendChild(addToDoCardBtn);
-    deleteToDoContainerTitleBtn.appendChild(iconDeleteTitleBtn);
+    deleteToDoContainerBtn.appendChild(iconDeleteTitleBtn);
     editToDoContainerTitleBtn.appendChild(iconEditTitleBtn);
-    toDoContaierActions.append(editToDoContainerTitleBtn, deleteToDoContainerTitleBtn);
+    toDoContaierActions.append(editToDoContainerTitleBtn, deleteToDoContainerBtn);
     toDoContainerTitleBtn.appendChild(iconTitleBtn);
     toDoContainerTitleInputBox.append(toDoContainerTitleInput, toDoContainerTitleBtn);
     toDoContainerText.append(toDoContainerTitleInputBox, toDoContainerTitle, toDoContaierActions);
     toDoContainer.append(toDoContainerText, toDoCardList, addToDoCard);
+
+    /*Adding events*/
+    addToDoCardEvent(toDoCardList, addToDoCardBtn);
+    editToDoContainerTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn, editToDoContainerTitleBtn);
+    deleteToDoContainer(toDoContainer, deleteToDoContainerBtn);
 
     return toDoContainer
 }
@@ -139,11 +144,38 @@ addToDoContainerBtn.addEventListener('click', () => {
     toDoBoard.appendChild(toDoCard);
 });
 
+/*SetTitle funciton*/
+function setTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn) {
+    toDoContainerTitleBtn.addEventListener('click', () => {
+        toDoContainerTitle.innerText = toDoContainerTitleInput.value;
+        toDoContainerTitleInput.classList.add('hidden');
+        toDoContainerTitleBtn.classList.add('hidden');
+        toDoContainerTitle.classList.remove('hidden');
+    });
+}
 
-/*AddToDocard event*/
-const toDoList = document.querySelector('.toDoCardList');
-const addToDoCardBtn = document.querySelector('.addToDoCardBtn');
-addToDoCardBtn.addEventListener('click', () => {
-    const toDoCard = createToDoCard();
-    toDoList.appendChild(toDoCard);
-});
+/*EditToDoContinerTitle funciotn*/
+function editToDoContainerTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn, editToDoContainerTitleBtn) {
+    editToDoContainerTitleBtn.addEventListener('click', () => {
+        toDoContainerTitleInput.classList.remove('hidden');
+        toDoContainerTitleBtn.classList.remove('hidden');
+        toDoContainerTitle.classList.add('hidden');
+        setTitle(toDoContainerTitle, toDoContainerTitleInput, toDoContainerTitleBtn);
+    });   
+}
+
+/*DeleteToDoContainer function*/
+function deleteToDoContainer(toDoContainer, deleteToDoContainerBtn) {
+    deleteToDoContainerBtn.addEventListener('click', () => {
+        toDoContainer.remove();
+    });
+}
+
+/*AddToDocard function*/
+function addToDoCardEvent(toDoCardList, addToDoCardBtn) {
+    addToDoCardBtn.addEventListener('click', () => {
+        const toDoCard = createToDoCard();
+        toDoCardList.appendChild(toDoCard);
+    });
+}
+
